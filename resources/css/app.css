@@ -1,3 +1,18 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+.hero-parallax {
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero-medium {
+    padding-bottom: 15rem;
+}
+.hero-full {
+    padding-bottom: 39rem;
+}

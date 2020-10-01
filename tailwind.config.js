@@ -6,8 +6,11 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ['Inter var', ...defaultTheme.fontFamily.sans],
             },
+            backgroundImage: theme => ({
+                'hero-image': "url('/img/bg.jpg')"
+            }),
         },
     },
 

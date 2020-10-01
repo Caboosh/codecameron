@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -13,7 +14,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        $postCount = Post::count();
+        $posts = Post::with('author')->paginate(4);
+        return view('blog.index', compact('posts', 'postCount'));
     }
 
     /**
