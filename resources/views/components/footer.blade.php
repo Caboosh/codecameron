@@ -44,4 +44,4 @@
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.js"></script>
 <script src="https://kit.fontawesome.com/f941c824e3.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="{{ asset('css/app.js') }}">
+<script src="{{ asset('js/app.js') }}"></script>

@@ -21,7 +21,47 @@
 
 
 @section('content')
- @if ($postCount > 0)
+<div class="news">
+  <div class="container leftside">
+      @if (! $posts->count())
+          <div class="alert info-alert">
+              <p>No Posts Found..</p>
+          </div>
+      @else
+      {{-- @if (isset($categoryName))
+          <div class="alert info-alert">
+              <p>Category: <strong>{{ $categoryName }}</strong><p>
+          </div>
+      @endif
+      @if (isset($authorName))
+          <div class="alert info-alert">
+              <p>Author: <strong>{{ $authorName }}</strong><p>
+          </div>
+      @endif
+      @if (isset($tagName))
+      <div class="alert info-alert">
+          <p>Tag: <strong>{{ $tagName }}</strong><p>
+      </div>
+      @endif
+      @if (isset($searchText))
+      <div class="alert info-alert">
+          <p>Search Query: <strong>{{ $searchText }}</strong><p>
+      </div>
+      @endif --}}
+      <div class="w-full mx-auto px-8 mb-8">
+        <h2 class=" text-4xl font-bold text-gray-300">Recent Blog Posts</h2>
+    </div>
+      @foreach ($posts as $post)
+          @include('components.blog.post-partial')
+      @endforeach
+      {{ $posts->links() }}
+      @endif
+  </div>
+  <aside class="rightside">
+      @include('blog.layouts.partials.sidebar')
+  </aside>
+</div>
+ {{-- @if ($postCount > 0)
  <div class="w-full mx-auto px-8 mb-8">
     <h2 class=" text-4xl font-bold text-gray-300">Recent Blog Posts</h2>
 </div>
@@ -35,8 +75,8 @@
  </div>
  <div class="w-full py-4 px-8 mx-auto">
   {{ $posts->links() }}
-</div>
- @else
+</div> --}}
+ {{-- @else
  <h2 class="text-gray-500">No Posts Found...</h2>
-@endif
+@endif --}}
 @endsection

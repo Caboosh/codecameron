@@ -15,7 +15,7 @@ class PostsController extends Controller
     public function index()
     {
         $postCount = Post::count();
-        $posts = Post::with('author')->paginate(4);
+        $posts = Post::with('user')->latestFirst()->published()->simplePaginate(4);
         return view('blog.index', compact('posts', 'postCount'));
     }
 
