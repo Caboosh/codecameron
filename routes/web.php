@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\Dashboard\PostsController as Admin_PostsController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,32 +16,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 // Frontend Posts Routes
-Route::get('/posts', 'PostsController@index');
-Route::get('/posts/{post}', 'PostsController@show');
+Route::get('/blog', [PostsController::class, 'index'])->name('posts.index');
+Route::get('/blog/posts/{id}', [PostsController::class, 'show'])->name('posts.show');
 
 
 
-
+// Main Backend Routes
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/CMS', function () {
+    return view('cms');
+})->name('cms');
+
 
 // Backend Posts CRUDE Routes
-Route::get('dashboard/posts', 'Dashboard/PostsController@index');
+Route::get('dashboard/posts', [Admin_PostsController::class, 'index'])->name('admin.posts.index');
 
-Route::get('dashboard/posts/create', 'Dashboard/PostsController@create');
-Route::post('dashboard/posts/create', 'Dashboard/PostsController@store');
+Route::get('dashboard/posts/create', [Admin_PostsController::class, 'create'])->name('admin.posts.create');
+Route::post('dashboard/posts/create', [Admin_PostsController::class, 'store'])->name('admin.posts.store');
 
-Route::get('dashboard/posts/edit/{id}', 'Dashboard/PostsController@edit');
-Route::put('dashboard/posts/edit/{id}', 'Dashboard/PostsController@update');
+Route::get('dashboard/posts/edit/{id}', [Admin_PostsController::class, 'edit'])->name('admin.posts.edit');
+Route::put('dashboard/posts/edit/{id}', [Admin_PostsController::class, 'update'])->name('admin.posts.update');
 
-Route::post('dashboard/posts/{id}/delete', 'Dashboard/PostsController@destroy');
+Route::post('dashboard/posts/{id}/delete', [Admin_PostsController::class, 'destroy'])->name('admin.posts.destroy');
 
-Route::get('dashboard/posts/trash', 'Dashboard/PostsController@trash');
-Route::post('dashboard/posts/trash/{id}/restore', 'Dashboard/PostsController@restore');
-Route::post('dashboard/posts/trash/{id}/delete', 'Dashboard/PostsController@eradicate');
+Route::get('dashboard/posts/trash', [Admin_PostsController::class, 'trash'])->name('admin.posts.trash');
+Route::post('dashboard/posts/trash/{id}/restore', [Admin_PostsController::class, 'restore'])->name('admin.posts.restore');
+Route::post('dashboard/posts/trash/{id}/delete', [Admin_PostsController::class, 'eradicate'])->name('admin.posts.eradicate');

@@ -16,6 +16,7 @@
         @livewireStyles
 
         <!-- Scripts -->
+        <script src="https://kit.fontawesome.com/da949d9c49.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.js" defer></script>
     </head>
     <body class="font-sans antialiased">
@@ -36,6 +37,9 @@
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <x-jet-nav-link href="/dashboard" :active="request()->routeIs('dashboard')">
                                     {{ __('Dashboard') }}
+                                </x-jet-nav-link>
+                                <x-jet-nav-link href="/CMS" :active="request()->routeIs('cms')">
+                                    {{ __('CMS') }}
                                 </x-jet-nav-link>
                             </div>
                         </div>

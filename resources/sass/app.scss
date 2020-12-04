@@ -1,0 +1,153 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+.hero-parallax {
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero-medium {
+    padding-bottom: 15rem;
+}
+.hero-full {
+    padding-bottom: 39rem;
+}
+
+/************************
+//? Table Styles (GLOBAL)
+*************************/
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+}
+tbody, tr, td {
+    border: 1px solid #e4dddd;
+}
+
+/************************
+//? Label Styles
+*************************/
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+.label-info {
+    background-color: #00c0ef;
+}
+.label-warning {
+    background-color: #f39c12;
+}
+.label-success {
+    background-color: #00a65a;
+}
+
+
+/************************
+//? Button Styles
+*************************/
+.button-main {
+    cursor: pointer;
+    border:none;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 15px 25px;
+    background: #FECE00;
+    border-radius: 10px;
+}
+.button-alt {
+    cursor: pointer;
+    border:none;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #F2ECEC;
+    padding: 15px 25px;
+    background: #707070;
+    border-radius: 10px;
+}
+.button-white {
+    cursor: pointer;
+    border:none;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 25px;
+    background: #F2ECEC;
+    border-radius: 10px;
+}
+.button-success {
+    cursor: pointer;
+    border:none;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 25px;
+    background-color: #00a65a;
+    color: #F2ECEC;
+    border-color: #008d4c;
+    border-radius: 10px;
+}
+.button-default {
+    cursor: pointer;
+    border:1px solid;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 5px 5px 10px;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    border-color: #e9e9e9;
+    color: #444;
+}
+.button-danger {
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    background-color: firebrick;
+    color: #F2ECEC;
+
+}
+.button-restore {
+    cursor: pointer;
+    border:none;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    background-color: #00a65a;
+    color: #F2ECEC;
+}
+.button-square {
+    cursor: pointer;
+    border:none;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 10px;
+    background: #FECE00;
+    border-radius: 5px;
+}
+.button-image {
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 25px;
+    background: #F2ECEC;
+    border-radius: 10px;
+}
