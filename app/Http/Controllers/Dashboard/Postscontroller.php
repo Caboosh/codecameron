@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class Postscontroller extends Controller
 {
-    protected $pagelimit = 9;
+    protected $pagelimit = 8;
 
     /**
      * Display a listing of the resource.
