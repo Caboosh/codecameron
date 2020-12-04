@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class Postscontroller extends Controller
 {
+    protected $pagelimit = 9;
+
     /**
      * Display a listing of the resource.
      *
@@ -14,17 +17,21 @@ class Postscontroller extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::with('user')->latest()->paginate($this->pagelimit);
+        $postCount = Post::count();
+        return view('posts', compact('posts', 'postCount'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * Category $category, Tag $tag
      */
-    public function create()
+    public function create(Post $post)
     {
-        //
+        $postCount = Post::count();
+        return view('posts-create', compact('post', 'postCount'));
     }
 
     /**

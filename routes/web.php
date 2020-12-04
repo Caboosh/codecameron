@@ -24,10 +24,14 @@ Route::get('/blog/posts/{id}', [PostsController::class, 'show'])->name('posts.sh
 
 
 
-
+// Main Backend Routes
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/CMS', function () {
+    return view('cms');
+})->name('cms');
+
 
 // Backend Posts CRUDE Routes
 Route::get('dashboard/posts', [Admin_PostsController::class, 'index'])->name('admin.posts.index');
